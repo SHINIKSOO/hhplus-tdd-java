@@ -1,7 +1,6 @@
 package io.hhplus.tdd;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +31,11 @@ public class PointControllerTest {
     @Test
     @DisplayName("포인트 조회 컨트롤러 테스트")
     void point() throws Exception {
-    	Long userId = 1L;
+    	long id = 1L;
     	mockMvc.perform(
-				MockMvcRequestBuilders.get("/point/{id}", userId))
-			.andExpect(status().isOk());
+                MockMvcRequestBuilders.get("/point/"+id))
+        .andExpect(status().isOk());
+     
     	
     }
 	

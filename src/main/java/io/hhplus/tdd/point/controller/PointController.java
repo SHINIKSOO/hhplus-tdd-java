@@ -15,6 +15,7 @@ import io.hhplus.tdd.point.domain.PointHistory;
 import io.hhplus.tdd.point.domain.UserPoint;
 import io.hhplus.tdd.point.service.UserPointService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 
 @RestController
@@ -25,12 +26,16 @@ public class PointController {
 	private static final Logger log = LoggerFactory.getLogger(PointController.class);
 	private final UserPointService userPointService;
 
+	
+	
+	
 	/**
 	 * TODO - 특정 유저의 포인트를 조회하는 기능을 작성해주세요.
 	 */
 	@GetMapping("{id}")
-	public UserPoint point(@PathVariable long id) {
+	public UserPoint point(@PathVariable("id") long id) {
 		return userPointService.getUserPoint(id);
+		
 	
 	}
 
